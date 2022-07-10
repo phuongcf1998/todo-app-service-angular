@@ -1,0 +1,14 @@
+<div class="border-slate-300 border-2 rounded-md pb-40 my-4">
+  <ul class="">
+    <app-item
+      [itemsDefaults]="itemsDefaults"
+      (pushCompleteItemRequest)="handleCompletedItemRequest($event)"
+      (pushDeleteItemRequest)="handleDeleteItemRequest($event)"
+    ></app-item>
+    <app-item
+      *ngIf="itemsCompleted.length > 0"
+      [itemsCompleted]="itemsCompleted"
+      (pushDeleteItemRequest)="handleDeleteItemRequest($event)"
+    ></app-item>
+  </ul>
+</div>
